@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
@@ -13,10 +12,12 @@ from '../pages/EventDetail';
 import EventLayout from '../layout/EventLayout';
 import NewEvent from '../pages/NewEvent';
 import EditPage from '../pages/EditPage';
-import { action as manipulateAction } from '../components/EventForm';
+import { action as manipulateAction } 
+  from '../components/EventForm';
 import WelcomePage from '../pages/WelcomePage';
 import SignUpPage from '../pages/SignUpPage';
 import { loginAction } from '../components/auth/LoginForm';
+import { userDataLoader } from './auth';
 
 
 // 라우터 설정
@@ -71,6 +72,8 @@ export const router = createBrowserRouter([
     path: '/',
     element: <RootLayout />,
     errorElement: <ErrorPage />,
+    loader: userDataLoader,
+    id: 'user-data',
     children: [
       { 
         path: '/', 
