@@ -21,6 +21,9 @@ const MainNavigation = () => {
           <li>
             <NavLink to='events' className={activeFn}>Events</NavLink>
           </li>
+          <li>
+            <button style={{width: '100%'}}>Logout</button>
+          </li>
         </ul>
       </nav>
     </header>
